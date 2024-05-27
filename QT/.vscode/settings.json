@@ -1,0 +1,9 @@
+//{
+  //  "python.envFile": "${C:\\Users\\SAV\\Desktop\\QGIS}/.env"
+  //}
+
+
+  {
+    "python.envFile": "C:\\Users\\SAV\\Desktop\\QGIS\\.env"
+  }
+  
