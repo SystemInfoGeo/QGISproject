@@ -28,8 +28,7 @@ app = QApplication([])
 
 # Charger le projet QGIS
 project = QgsProject.instance()
-path = r'5layers.qgz'
-project.read(path)
+project.read('C:\Users\SAV\Downloads\5layers.qgz')
 
 # Configurer les couches et les changements de couleur
 layers = [QgsProject.instance().mapLayersByName(f'point{i}')[0] for i in range(1, 6)]

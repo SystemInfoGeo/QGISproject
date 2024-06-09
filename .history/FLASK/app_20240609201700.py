@@ -85,7 +85,7 @@ def build_graph(points):
     
     return graph
 
-def calculate_optimal_path(graph, start_node_index):
+def calculate_optimal_path(graph, start_node_index = 0  # Le point de départ est toujours le premier point):
     try:
         # Utiliser une heuristique simple pour résoudre le TSP
         path = [start_node_index]

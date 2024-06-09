@@ -56,8 +56,7 @@ def receive_data():
     print("Graphe construit:", graph.nodes, graph.edges)
 
     # Calculer le chemin optimal
-    start_node_index = 0  # Le point de départ est toujours le premier point
-    optimal_path = calculate_optimal_path(graph, Point_depart_fixe)
+    optimal_path = calculate_optimal_path(graph, start_node_index)
     print("Chemin optimal:", optimal_path)
     if not optimal_path:
         return jsonify({"status": "error", "message": "Aucun chemin trouvé entre le point de départ et le point d'arrivée"}), 404
@@ -80,7 +79,7 @@ def build_graph(points):
     for u in range(len(points)):
         for v in range(u+1, len(points)):
             distance = calculate_distance(points[u], points[v])
-            print(f"Distance entre les points {u} et {v} : {distance}")  # On affiche la distance calculée
+            print(f"Distance entre les points {u} et {v} : {distance}")  # Afficher la distance calculée
             graph.add_edge(u, v, weight=distance)
     
     return graph
