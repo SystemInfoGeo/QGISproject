@@ -16,7 +16,7 @@ def calculate_distance(point1, point2):
     return distance
 
 def inform_nextjs(data):
-    url = 'http://localhost:3000/api/updateStatus'  # Assurez-vous que l'URL est correcte
+    url = 'http://localhost:3000/updateStatus'  # Assurez-vous que l'URL est correcte
     headers = {'Content-Type': 'application/json'}
     response = requests.post(url, json=data, headers=headers)
     if response.status_code == 200:

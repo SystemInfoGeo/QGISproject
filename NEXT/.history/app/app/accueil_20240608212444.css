@@ -1,0 +1,34 @@
+/* accueil.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  header, footer {
+    background-color: #f8f8f8;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  h1, h2 {
+    color: #333;
+  }
+  
+  #description, #features, #map {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    margin: 10px 0;
+  }
+  
