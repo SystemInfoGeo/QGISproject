@@ -1,3 +1,0 @@
-networkx
-requests
-pip install python-dotenv
