@@ -1,0 +1,174 @@
+/* app/page.module.css */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  color: #333;
+  position: relative;
+  z-index: 1;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 35px;
+  background-color: rgba(0, 0, 0, 0.85);
+  color: white;
+  width: 95.4%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  width: %
+}
+
+.logoContainer h1 {
+  margin-left: 20px;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav ul li {
+  margin: 0;
+}
+
+.nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav ul li a:hover {
+  text-decoration: underline;
+}
+
+.backgroundSection {
+  background: url('/images/back.jpeg') no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.backgroundButton {
+  position: absolute;
+  left: 15%;
+  top: 80%;
+  transform: translate(-50%, -50%);
+  padding: 10px 20px;
+  background-color: #0070f3;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.backgroundButton:hover {
+  background-color: #005bb5;
+}
+
+.main {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero {
+  text-align: center;
+  margin: 40px 0;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hero h2 {
+  font-size: 2.5em;
+  margin: 0;
+}
+
+.hero p {
+  font-size: 1.2em;
+  margin: 10px 0 20px;
+}
+
+.section {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 20px;
+  margin: 20px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section h2 {
+  margin-top: 0;
+}
+
+.section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.section ul li {
+  background: url('/images/check.jpg') no-repeat left center;
+  padding-left: 30px;
+  margin: 10px 0;
+}
+
+.section blockquote {
+  font-style: italic;
+  color: #555;
+  border-left: 4px solid #4caf50;
+  padding-left: 20px;
+  margin: 10px 0;
+}
+
+.button {
+  padding: 10px 20px;
+  background-color: #0070f3;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.button:hover {
+  background-color: #005bb5;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(51, 51, 51, 0.85);
+  color: white;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.footer a {
+  color: #4caf50;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
