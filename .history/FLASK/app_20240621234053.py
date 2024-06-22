@@ -21,7 +21,7 @@ def inform_nextjs(data):
     headers = {'Content-Type': 'application/json'}
     response = requests.post(url, json=data, headers=headers)
     if response.status_code == 200:
-        print("Succès de l'envoi des données à Next.js")    
+        print("Succès de l'envoi des données à Next.js")   
     else:
         print("Erreur lors de l'envoi des données à Next.js:", response.status_code, response.text)
 
