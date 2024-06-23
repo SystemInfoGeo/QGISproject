@@ -14,7 +14,7 @@ Point_depart_fixe = {
 def calculate_distance(point1, point2):
     distance = ((point2['latitude'] - point1['latitude'])**2 + (point2['longitude'] - point1['longitude'])**2)**0.5
     return distance
-
+  
 # envoyer les données vers Next.js
 def inform_nextjs(data):
     url = 'http://localhost:3000/api/updateStatus'  
