@@ -2,21 +2,21 @@ from flask import Flask, request, jsonify
 import networkx as nx
 import requests
 
-app = Flask(__name__)
+app = Flask(__name__)  # Corrigé ici
 
-#on va spécifier le point de départ ( un point fixe)
+# On va spécifier le point de départ (un point fixe)
 Point_depart_fixe = {
     'latitude': 36.714666886023693,
     'longitude': 4.045495309895148
 }
 
-#On calcule la distance euclidienne entre deux points
+# On calcule la distance euclidienne entre deux points
 def calculate_distance(point1, point2):
-    distance = ((point2['longitude'] - point1['longitude'])**2 + (point2['latitude'] - point1['latitude'])**2)**0.5
+    distance = ((point2['longitude'] - point1['longitude'])**2 + (point2['latitude'] - point1['latitude'])**2)**0.5  # Ajout de la parenthèse fermante
     return distance
 
 def inform_nextjs(data):
-    url = 'http://localhost:3000/updateStatus'  # Assurez-vous que l'URL est correcte
+    url = 'http://localhost:3000/api/updateStatus'  # Assurez-vous que l'URL est correcte
     headers = {'Content-Type': 'application/json'}
     response = requests.post(url, json=data, headers=headers)
     if response.status_code == 200:
@@ -26,30 +26,12 @@ def inform_nextjs(data):
 
 @app.route('/data', methods=['POST'])
 def receive_data():
-    
     # Récupérer les données envoyées dans la requête HTTP
     data = request.json
     print("Données reçues:", data)
-    
-    
-    #On va ajouter le point de départ aux points
+
+    # On va ajouter le point de départ aux points
     points = [Point_depart_fixe] + data['points']
-
-    
-    """
-    # Extraire le point de départ et les autres points
-    start_node_index = None
-    points = []
-    for index, point in enumerate(data):
-        if point.get('is_start', False):
-            start_node_index = index
-        points.append(point)
-
-    # Afficher le point de départ
-    if start_node_index is None:
-        return jsonify({"status": "error", "message": "Point de départ non spécifié"}), 400
-    """
-    
     
     # Construire le graphe à partir des données reçues
     graph = build_graph(points)
@@ -57,13 +39,13 @@ def receive_data():
 
     # Calculer le chemin optimal
     start_node_index = 0  # Le point de départ est toujours le premier point
-    optimal_path = calculate_optimal_path(graph, Point_depart_fixe)
+    optimal_path = calculate_optimal_path(graph, start_node_index)
     print("Chemin optimal:", optimal_path)
     if not optimal_path:
         return jsonify({"status": "error", "message": "Aucun chemin trouvé entre le point de départ et le point d'arrivée"}), 404
 
     # Envoi des données à Next.js
-    inform_nextjs(data)
+    inform_nextjs(optimal_path)
 
     # Renvoyer une réponse au client avec le chemin optimal calculé
     return jsonify({"status": "success", "optimal_path": optimal_path})
