@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "node index.js",
+    "dev": "next dev",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "concurrently \"npm run start:flask\" \"npm run start:next\"",
     "start:flask": "set FLASK_APP=Flask/app.py && flask run",
