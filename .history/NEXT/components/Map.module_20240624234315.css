@@ -1,0 +1,44 @@
+'use client';
+
+import { useState, useEffect } from 'react';
+import styles from './collect.module.css';
+import dynamic from 'next/dynamic';
+import { LatLngTuple } from 'leaflet';
+
+// Utilisation de dynamic import pour charger le composant Map uniquement côté client
+const Map = dynamic(() => import('../components/Map'), { ssr: false });
+
+const Collect = () => {
+  const [path, setPath] = useState<LatLngTuple[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchPath = async () => {
+      try {
+        const response = await fetch('/api/updateStatus');
+        const data = await response.json();
+        const formattedPath: LatLngTuple[] = data.optimal_path.map((point: number[]) => [point[0], point[1]]);
+        setPath(formattedPath);
+        setLoading(false);
+      } catch (error) {
+        console.error('Erreur lors de la récupération des données:', error);
+        setLoading(false);
+      }
+    };
+
+    fetchPath();
+  }, []);
+
+  return (
+    <div className={styles.container}>
+      <h1 className={styles.title}>Affichage du Court Chemin</h1>
+      {loading ? (
+        <p>Chargement...</p>
+      ) : (
+        <Map path={path} />
+      )}
+    </div>
+  );
+};
+
+export default Collect;

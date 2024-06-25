@@ -2,7 +2,7 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/accueil": "pages/accueil.js",
   "/collect": "pages/collect.js",
-  "/api/updateStatus": "pages/api/updateStatus.js"
+  "/api/updateStatus": "pages/api/updateStatus.js",
+  "/": "pages/index.js"
 }
