@@ -34,7 +34,7 @@ export default function Collect() {
         });
         if (response.ok) {
           const result = await response.json();
-          console.log('Data received:', result); 
+          console.log('Data received:', result); // Log the received data
           setData(result);
         } else {
           console.error('Error fetching data:', response.statusText);
@@ -58,11 +58,12 @@ export default function Collect() {
         {loading ? (
           <div className={styles.loader}>Chargement...</div>
         ) : (
-          data && (
-            <div className={styles.map}>
-              <MapComponent points={data.points} optimalPath={data.optimal_path as LatLngTuple[]} />
-            </div>
-          )
+          <div className={styles.map}>
+            <MapComponent 
+              points={data ? data.points : []} 
+              optimalPath={data ? data.optimal_path as LatLngTuple[] : []} 
+            />
+          </div>
         )}
       </main>
       <footer className={styles.footer}>

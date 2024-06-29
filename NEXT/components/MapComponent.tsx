@@ -9,11 +9,11 @@ interface Point {
 }
 
 interface MapProps {
-  points: Point[];
-  optimalPath: LatLngTuple[];
+  points?: Point[];
+  optimalPath?: LatLngTuple[];
 }
 
-const MapComponent: React.FC<MapProps> = ({ points, optimalPath }) => {
+const MapComponent: React.FC<MapProps> = ({ points = [], optimalPath = [] }) => {
   const center: LatLngTuple = [36.712776, 4.040093]; // Coordonnées du centre de la carte
 
   // Function to create a custom icon with a number
@@ -30,13 +30,17 @@ const MapComponent: React.FC<MapProps> = ({ points, optimalPath }) => {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       />
-      {optimalPath.map((coord, index) => (
-        <Marker
-          key={`optimal-${index}`}
-          position={coord as LatLngTuple}
-          icon={createIcon(index === 0 || index === optimalPath.length - 1 ? 1 : index + 1, index === 0 || index === optimalPath.length - 1 ? 'red' : 'red')}
-        />
-      ))}
+      {optimalPath.map((coord, index) => {
+        const isStartOrEnd = index === 0 || index === optimalPath.length - 1;
+        const pointNumber = isStartOrEnd ? 1 : index + 1;
+        return (
+          <Marker
+            key={`optimal-${index}`}
+            position={coord as LatLngTuple}
+            icon={createIcon(pointNumber, 'red')}
+          />
+        );
+      })}
       {optimalPath.length > 0 && (
         <Polyline
           positions={optimalPath}
@@ -48,6 +52,3 @@ const MapComponent: React.FC<MapProps> = ({ points, optimalPath }) => {
 };
 
 export default MapComponent;
-
-
-
