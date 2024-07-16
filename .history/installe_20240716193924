@@ -1,0 +1,4 @@
+Npm install @react-google-maps/api
+npm install @types/react
+npm install leaflet react-leaflet
+npm install react-icons
