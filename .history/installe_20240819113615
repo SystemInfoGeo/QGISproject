@@ -1,0 +1,34 @@
+pour NODE JS
+npm install @react-google-maps/api
+npm install @types/react
+npm install leaflet react-leaflet
+npm install react-icons
+npm install @chakra-ui/react @emotion/react @emotion/styled framer-motion
+npm install axios
+
+
+pour python
+pip install waitress
+pip install networkx
+pip install requests
+pip install psycopg2
+pip install flask_jwt_extended
+pip install flask-cors
+pip install email-validator
+
+
+Migrations de la Base de Données avec Flask :
+flask db migrate -m "Add email column to User table"
+flask db upgrade(Cette commande mettra à jour la base de données en ajoutant la colonne email à la table user.
+2. Vérifiez la Table user)
+
+
+flask db migrate -m "Ajout des colonnes first_name, last_name, phone_number à la table user"
+
+flask db revision -m "Augmenter la longueur de la colonne password_hash"
+flask db upgrade
+
+
+
+
+

@@ -1,0 +1,15 @@
+/* AdminNavbar.module.css */
+.fullNavbar {
+    width: 100%; /* Prend toute la largeur de l'écran */
+  }
+  
+  .navbarBrand {
+    position: absolute;
+    left: 10px;
+  }
+  
+  .navbarNav {
+    position: absolute;
+    right: 10px;
+  }
+  

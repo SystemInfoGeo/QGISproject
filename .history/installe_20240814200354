@@ -1,0 +1,8 @@
+Npm install @react-google-maps/api
+npm install @types/react
+npm install leaflet react-leaflet
+npm install react-icons
+npm install @chakra-ui/react @emotion/react @emotion/styled framer-motion
+
+pip install waitress
+ pip install networkx

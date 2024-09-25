@@ -1,0 +1,58 @@
+/* styles/accueil.module.css */
+
+.container {
+  /* Ajoutez ou ajustez les styles existants */
+}
+
+/* Ajoutez les styles pour les autres sections ici */
+
+.testimonials {
+  padding: 2rem;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.testimonialList {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.testimonial {
+  max-width: 400px;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial h4 {
+  margin: 0.5rem 0 0.2rem;
+  font-size: 1.2rem;
+}
+
+.testimonial span {
+  color: #666;
+}
+
+/* Ajoutez les styles pour les icônes sociales et les autres éléments */
+.socialIcons {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.socialIcons img {
+  width: 30px;
+  height: 30px;
+  transition: opacity 0.3s;
+}
+
+.socialIcons a:hover img {
+  opacity: 0.7;
+}

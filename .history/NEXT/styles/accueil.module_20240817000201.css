@@ -1,0 +1,224 @@
+/* Conteneur principal */
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  color: white;
+  overflow-x: hidden;
+  font-family: Arial, sans-serif;
+}
+
+/* En-tête (Barre de menu) */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #76a688;
+  color: white;
+  width: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  overflow: hidden; /* Cache le débordement */
+}
+
+/* Logo et titre */
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.logoContainer img {
+  margin-right: 1rem;
+}
+
+.logoContainer h1 {
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+/* Navigation */
+.nav {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+  overflow: hidden; /* Cache le texte qui dépasse */
+}
+
+.nav ul li {
+  text-align: center;
+  flex: 1; /* Permet à chaque élément de menu d'utiliser l'espace disponible */
+}
+
+.nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5rem;
+  transition: background-color 0.3s;
+  font-size: 0.9rem;
+  display: block;
+  white-space: nowrap; /* Empêche le texte de se casser en plusieurs lignes */
+}
+
+.nav ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+}
+
+/* Contenu principal (vidéo) */
+.mainContent {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+  background-color: #000;
+}
+
+/* Vidéo d'arrière-plan */
+.backgroundVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* Bouton de sourdine */
+.muteButton {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.muteButton img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+/* Superposition de contenu */
+.overlay {
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.overlay h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.collectButton {
+  padding: 0.75rem 1.5rem;
+  background-color: #41cb5b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background-color 0.3s;
+}
+
+.collectButton:hover {
+  background-color: #33a64c;
+}
+
+/* Section de contenu supplémentaire */
+.sectionContent {
+  background-color: #333;
+  padding: 2rem;
+  color: white;
+  text-align: center;
+}
+
+/* Footer */
+.footerContent {
+  background-color: #333;
+  padding: 2rem;
+  color: white;
+  text-align: center;
+  margin-top: auto;
+}
+
+/* Icônes sociales */
+.socialIcons {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  z-index: 2;
+}
+
+.socialIcons img {
+  width: 2rem;
+  height: 2rem;
+}
+
+/* Responsivité pour petits écrans */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .logoContainer {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .logoContainer img {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .logoContainer h1 {
+    font-size: 1.2rem;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+    overflow-x: hidden; /* Cache le défilement horizontal */
+  }
+
+  .nav ul li {
+    min-width: 100px; /* Assure une largeur minimale pour chaque élément de menu sur petits écrans */
+  }
+
+  .nav ul li a {
+    font-size: 1rem; /* Augmente légèrement la taille du texte pour les petits écrans */
+  }
+
+  .mainContent {
+    height: 60vh;
+  }
+
+  .collectButton {
+    padding: 0.5rem 1rem;
+  }
+}

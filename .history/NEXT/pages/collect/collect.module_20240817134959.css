@@ -1,0 +1,113 @@
+/* Styles généraux */
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  color: #333;
+  overflow: hidden; /* Évite le débordement de contenu */
+}
+
+.header {
+  background-color: #76a688;
+  color: white;
+  padding: 10px 20px; /* Réduit le padding pour ajuster l'espace */
+  display: flex;
+  justify-content: space-between; /* Espace entre logo et menu */
+  align-items: center; /* Centre verticalement les éléments */
+  width: 100%; /* Assure que l'en-tête prend toute la largeur */
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.logoContainer img {
+  margin-right: 10px; /* Espace entre le logo et le texte */
+}
+
+.nav {
+  flex-grow: 1; /* Permet à la navigation de s'étendre */
+  display: flex;
+  justify-content: flex-end; /* Aligne les éléments du menu à droite */
+}
+
+.nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.nav li {
+  margin: 0 15px; /* Espace entre les éléments du menu */
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1em;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
+/* Styles de la carte */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: #f0f4f8;
+  position: relative;
+  overflow: hidden; /* Évite le débordement de la carte */
+}
+
+.map {
+  height: 80vh; /* Assure que la carte occupe 80% de la hauteur de l'écran */
+  width: 100%;
+  position: relative;
+}
+
+.finishButton {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  background-color: #41cb5b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.finishButton:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+
+/* Styles du footer */
+.footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #2c3e50;
+  color: white;
+}
+
+/* Styles du message */
+.message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #76a688;
+  color: white;
+  padding: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  z-index: 1000;
+}

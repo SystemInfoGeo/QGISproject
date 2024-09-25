@@ -1,0 +1,54 @@
+.custom-navbar {
+    background-color: #808080; /* Couleur de fond de la navbar */
+  }
+  
+  .navbar-brand {
+    color: white;
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 80px; /* Taille du logo ajustée */
+    height: 80px;
+    margin-right: 15px;
+  }
+  
+  .custom-nav-link {
+    color: white;
+    margin-right: 30px;
+  }
+  
+  .custom-nav-link:hover {
+    color: #d1d1d1; /* Couleur du lien au survol */
+  }
+  
+  /* Media query pour les petits écrans (tablettes et téléphones) */
+  @media (max-width: 768px) {
+    .logo {
+      width: 60px; /* Taille du logo plus petite pour les petits écrans */
+      height: 60px;
+    }
+    
+    .custom-nav-link {
+      margin-right: 20px; /* Réduire l'espacement entre les liens */
+    }
+  }
+  
+  /* Media query pour les très petits écrans (smartphones) */
+  @media (max-width: 480px) {
+    .logo {
+      width: 50px; /* Taille encore plus petite pour les très petits écrans */
+      height: 50px;
+    }
+    
+    .custom-nav-link {
+      margin-right: 10px; /* Réduire encore plus l'espacement entre les liens */
+      font-size: 14px; /* Réduire la taille de la police des liens */
+    }
+    
+    .navbar-brand {
+      font-size: 18px; /* Réduire la taille de la police du texte de la marque */
+    }
+  }
+  

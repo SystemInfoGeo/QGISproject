@@ -1,0 +1,25 @@
+Npm install @react-google-maps/api
+npm install @types/react
+npm install leaflet react-leaflet
+npm install react-icons
+npm install @chakra-ui/react @emotion/react @emotion/styled framer-motion
+
+pip install waitress
+ pip install networkx
+ pip install requests
+pip install psycopg2
+pip install flask_jwt_extended (dans flask akk)
+
+npm install axios(dans Next)
+pip install flask-cors(flask)
+flask db migrate -m "Add email column to User table"(flask)
+flask db upgrade(Cette commande mettra à jour la base de données en ajoutant la colonne email à la table user.
+2. Vérifiez la Table user)
+
+pip install email-validator(flask)
+flask db migrate -m "Ajout des colonnes first_name, last_name, phone_number à la table user"
+
+
+
+
+

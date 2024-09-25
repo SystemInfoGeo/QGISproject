@@ -1,8 +1,8 @@
 {
-  "pages\\collect\\index.tsx -> ../../components/MapComponent": {
-    "id": "pages\\collect\\index.tsx -> ../../components/MapComponent",
+  "pages\\_app.js -> bootstrap/dist/js/bootstrap.bundle.min.js": {
+    "id": "pages\\_app.js -> bootstrap/dist/js/bootstrap.bundle.min.js",
     "files": [
-      "static/chunks/components_MapComponent_tsx.js"
+      "static/chunks/node_modules_bootstrap_dist_js_bootstrap_bundle_min_js.js"
     ]
   }
 }

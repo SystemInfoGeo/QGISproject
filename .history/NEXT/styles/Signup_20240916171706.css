@@ -1,0 +1,50 @@
+.signup-container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  .signup-icon {
+    width: 60px;
+    height: 60px;
+    background-color: #28a745;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px;
+  }
+  
+  .signup-icon svg {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .signup-btn {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .signup-btn:disabled {
+    background-color: #94d3a2;
+  }
+  
+  .text-danger {
+    color: #dc3545 !important;
+  }
+  
+  .text-center a {
+    color: #007bff;
+  }
+  
+  .text-center a:hover {
+    color: #0056b3;
+  }
+  
+  .bg-light {
+    background-color: #f8f9fa !important;
+  }
+  

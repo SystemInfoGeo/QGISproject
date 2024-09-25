@@ -1,0 +1,9 @@
+
+    # Compte le nombre total de messages
+    total_messages_count = Message.query.count()
+    # Compte le nombre de messages en attente de réponse (is_responded=False)
+    pending_messages_count = Message.query.filter_by(is_responded=False).count()
+    return jsonify({
+        "total_messages": total_messages_count,
+        "pending_messages": pending_messages_count
+    })

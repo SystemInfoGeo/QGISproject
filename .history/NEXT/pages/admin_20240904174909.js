@@ -1,0 +1,138 @@
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import { useRouter } from 'next/router';
+
+const AdminPage = () => {
+  const [users, setUsers] = useState([]);
+  const [email, setEmail] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');  // Ajout du champ phone_number
+  const [role, setRole] = useState('visiteur');
+  const [password, setPassword] = useState('');
+  const [message, setMessage] = useState('');
+  const [error, setError] = useState('');
+  const router = useRouter();
+
+  useEffect(() => {
+    const checkAuth = async () => {
+      const token = localStorage.getItem('token');
+      if (!token) {
+        setError('Vous devez être connecté pour accéder à cette page.');
+        return;
+      }
+
+      try {
+        // Charger la liste des utilisateurs directement
+        const usersResponse = await axios.get('http://127.0.0.1:5000/users', {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        setUsers(usersResponse.data);
+
+      } catch (err) {
+        console.error('Erreur lors du chargement des utilisateurs', err);
+        setError('Erreur lors de la vérification de l\'utilisateur.');
+      }
+    };
+
+    checkAuth();
+  }, [router]);
+
+  const handleAddUser = async (e) => {
+    e.preventDefault();
+    const token = localStorage.getItem('token');
+
+    
+      // Validation simple du numéro de téléphone
+    const phoneRegex = /^[0-9]+$/;
+    if (!phoneRegex.test(phoneNumber)) {
+      setError('Numéro de téléphone invalide. Veuillez entrer uniquement des chiffres.');
+      return;
+    }
+
+    try {
+      setIsLoading(true); // Démarrer le chargement
+      await axios.post('http://127.0.0.1:5000/users', {
+        email: email,
+        first_name: firstName,
+        last_name: lastName,
+        role: role,
+        phone_number: phoneNumber,  // Ajout du phone_number à la requête
+        password: password,
+      }, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          'Content-Type': 'application/json'  // Vérifie que cet en-tête est bien là
+        },
+        
+      });
+      setMessage('Utilisateur ajouté avec succès');
+      setEmail('');
+      setFirstName('');
+      setLastName('');
+      setPhoneNumber('');  // Réinitialiser le champ phone_number
+      setRole('visiteur');
+      setPassword('');
+      // Recharger la liste des utilisateurs
+      const usersResponse = await axios.get('http://127.0.0.1:5000/users', {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          'Content-Type': 'application/json'  // Spécifier que les données sont envoyées en JSON
+        },
+      });
+      setUsers(usersResponse.data);
+    } catch (err) {
+      console.error('Erreur lors de l\'ajout de l\'utilisateur', err);
+      setError('Erreur lors de l\'ajout de l\'utilisateur');
+    }
+  };
+
+  return (
+    <div>
+      <h1>Page d'administration</h1>
+      {error && <p style={{ color: 'red' }}>{error}</p>}
+      {message && <p style={{ color: 'green' }}>{message}</p>}
+      <form onSubmit={handleAddUser}>
+        <div>
+          <label>Email:</label>
+          <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+        </div>
+        <div>
+          <label>Prénom:</label>
+          <input type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} required />
+        </div>
+        <div>
+          <label>Nom:</label>
+          <input type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} required />
+        </div>
+        <div>
+          <label>Numéro de téléphone:</label>  {/* Nouveau champ pour le numéro de téléphone */}
+          <input type="text" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} required />
+        </div>
+        <div>
+          <label>Rôle:</label>
+          <select value={role} onChange={(e) => setRole(e.target.value)}>
+            <option value="visiteur">Visiteur</option>
+            <option value="agent">Agent</option>
+            <option value="admin">Admin</option>
+          </select>
+        </div>
+        <div>
+          <label>Mot de passe:</label>
+          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+        </div>
+        <button type="submit">Ajouter un utilisateur</button>
+      </form>
+      <h2>Liste des utilisateurs</h2>
+      <ul>
+        {users.map(user => (
+          <li key={user.id}>{user.email} - {user.first_name} {user.last_name} - {user.phone_number} - {user.role}</li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default AdminPage;

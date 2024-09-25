@@ -1,1 +1,1 @@
-self.__REACT_LOADABLE_MANIFEST="{\"pages\\\\collect\\\\index.tsx -> ../../components/MapComponent\":{\"id\":\"pages\\\\collect\\\\index.tsx -> ../../components/MapComponent\",\"files\":[\"static/chunks/components_MapComponent_tsx.js\"]}}"
+self.__REACT_LOADABLE_MANIFEST="{\"pages\\\\_app.js -> bootstrap/dist/js/bootstrap.bundle.min.js\":{\"id\":\"pages\\\\_app.js -> bootstrap/dist/js/bootstrap.bundle.min.js\",\"files\":[\"static/chunks/node_modules_bootstrap_dist_js_bootstrap_bundle_min_js.js\"]}}"

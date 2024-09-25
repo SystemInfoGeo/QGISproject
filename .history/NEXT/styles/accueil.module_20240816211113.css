@@ -1,0 +1,107 @@
+/* styles/accueil.module.css */
+
+/* Style pour la barre de menu */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #4caf50; /* Couleur verte */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  height: 60px; /* Hauteur fixe pour la barre de menu */
+}
+
+/* Conteneur principal avec padding-top pour éviter le chevauchement */
+.mainContent {
+  position: relative;
+  padding-top: 60px; /* Hauteur de la barre de menu pour éviter le chevauchement */
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Style pour la vidéo de fond */
+.backgroundVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Style pour le bouton de mute */
+.muteButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.muteIcon {
+  width: 30px;
+  height: 30px;
+}
+
+/* Style pour l'overlay avec le contenu */
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 1;
+}
+
+.content {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+/* Style pour le bouton de collecte */
+.collectButton {
+  margin-top: 1rem;
+  padding: 0.5rem 2rem;
+  background: #0070f3;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.collectButton:hover {
+  background: #005bb5;
+}
+
+/* Style pour les icônes sociales */
+.socialIcons {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.socialIcons a {
+  display: block;
+}
+
+.socialIcons img {
+  width: 24px;
+  height: 24px;
+  transition: opacity 0.3s;
+}
+
+.socialIcons a:hover img {
+  opacity: 0.7;
+}

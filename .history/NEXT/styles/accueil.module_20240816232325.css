@@ -1,0 +1,110 @@
+/* Conteneur principal */
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  color: white;
+}
+
+/* En-tête */
+.header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #76a688; /* Couleur de fond de la barre de menu */
+  color: white;
+  z-index: 10;
+}
+
+/* Conteneur du logo */
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.logoContainer img {
+  width: 40px;
+  height: 40px;
+}
+
+.logoContainer h1 {
+  margin-left: 10px;
+  font-size: 1.5em;
+}
+
+/* Navigation */
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Contenu principal */
+.mainContent {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 20px 0;
+}
+
+/* Vidéo d'arrière-plan */
+.backgroundVideo {
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+  object-fit: cover;
+}
+
+/* Superposition de contenu */
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Contenu de l'overlay */
+.content {
+  text-align: center;
+  color: white;
+}
+
+/* Bouton de collecte */
+.collectButton {
+  margin-top: 20px;
+  background-color: #41cb5b;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Section en dessous de la vidéo */
+.sectionContent {
+  padding: 50px;
+  background-color: #222;
+  color: white;
+  text-align: center;
+}
+
+/* Footer */
+.footerContent {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}

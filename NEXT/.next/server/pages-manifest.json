@@ -3,6 +3,6 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/": "pages/index.js",
-  "/collect": "pages/collect.js",
-  "/api/updateStatus": "pages/api/updateStatus.js"
+  "/user/profile": "pages/user/profile.js",
+  "/admin/messages": "pages/admin/messages.js"
 }

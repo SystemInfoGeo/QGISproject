@@ -1,0 +1,91 @@
+.video-header {
+    height: 75vh;
+    overflow: hidden;
+  }
+  
+  .video-background {
+    object-fit: cover;
+  }
+  
+  .mute-button {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .triangle-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    z-index: 2;
+  }
+  
+  .triangle {
+    width: 0;
+    height: 0;
+    border-left: 400px solid rgba(0, 0, 0, 0.5);  /* Triangle avec opacité modifiée */
+    border-top: 400px solid transparent;
+    border-bottom: 400px solid transparent;
+  }
+  
+  .triangle-text {
+    position: absolute;
+    left: 20px;
+    top: 150px;
+    z-index: 3;
+    line-height: 1.3;
+  }
+  
+  .triangle-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #2E3B4E;
+  }
+  
+  .section-text {
+    font-size: 1.25rem;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #555;
+  }
+  
+  .icon-img {
+    width: 120px;
+    height: 120px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .icon-img:hover {
+    transform: scale(1.2);
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .feature-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: black;
+  }
+  
+  .feature-text {
+    font-size: 1.2rem;
+    color: #555;
+  }
+  h3.feature-title {
+    color: #007bff; /* Couleur bleu prononcée */
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+  
+  .feature-text {
+    color: #6c757d; /* Couleur légèrement grisée pour le texte */
+  }
+  

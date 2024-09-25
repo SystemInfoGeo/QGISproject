@@ -1,0 +1,10 @@
+/* AdminNavbar.module.css */
+.navbarBrand {
+    position: absolute;
+    left: 10px;
+  }
+  
+  .navbarNav {
+    position: absolute;
+    right: 10px;
+  }

@@ -1,0 +1,106 @@
+/* En-tête (Barre de menu) */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #76a688;
+  color: white;
+  width: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  position: relative;
+  flex-wrap: wrap; /* Permet à la barre de navigation de s'ajuster sur plusieurs lignes si nécessaire */
+}
+
+/* Logo et titre */
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.logoContainer img {
+  margin-right: 1rem;
+}
+
+.logoContainer h1 {
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+/* Navigation */
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  flex: 1;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+}
+
+.nav ul li {
+  white-space: nowrap; /* Empêche la cassure des mots */
+}
+
+.nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s;
+  font-size: 1rem;
+  display: block;
+  text-align: center;
+}
+
+.nav ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+}
+
+/* Responsivité pour petits écrans */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .logoContainer {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+  }
+
+  .logoContainer img {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .logoContainer h1 {
+    font-size: 1.2rem;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 0.5rem;
+  }
+
+  .nav ul li {
+    width: 100%;
+  }
+
+  .nav ul li a {
+    font-size: 1rem;
+    width: 100%;
+    text-align: left;
+    padding: 0.75rem;
+  }
+}

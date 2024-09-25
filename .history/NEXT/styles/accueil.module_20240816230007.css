@@ -1,0 +1,122 @@
+/* Conteneur principal */
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  color: white;
+}
+
+/* En-tête */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #76a688; /* Couleur de fond de la barre de menu */
+  color: white;
+  z-index: 10; /* Assurez-vous que la barre de menu est au-dessus du contenu */
+  position: relative;
+}
+
+/* Conteneur du logo */
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.logoContainer img {
+  width: 40px;
+  height: 40px;
+}
+
+.logoContainer h1 {
+  margin-left: 10px;
+  font-size: 1.5em;
+}
+
+/* Navigation */
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Contenu principal */
+.mainContent {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  flex-grow: 1;
+  width: 100%;
+}
+
+/* Vidéo d'arrière-plan */
+.backgroundVideo {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* Superposition de contenu */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Assombrir l'arrière-plan pour rendre le texte plus lisible */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2; /* Assurez-vous que le texte est au-dessus de la vidéo */
+}
+
+/* Contenu de l'overlay */
+.content {
+  text-align: center;
+  color: white;
+}
+
+/* Section supplémentaire */
+.footerContent {
+  background-color: #333;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* Conteneur des fonctionnalités */
+.features {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.featureItem {
+  max-width: 250px;
+  padding: 20px;
+  background-color: white;
+  color: #333;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.featureItem h3 {
+  margin-bottom: 15px;
+}
+
+.featureItem p {
+  font-size: 1rem;
+}

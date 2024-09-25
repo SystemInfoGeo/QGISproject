@@ -1,0 +1,139 @@
+/* styles/accueil.module.css */
+
+/* Assurez-vous que la hauteur de la barre de menu est fixe et définie */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.8);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  height: 60px; /* Hauteur fixe pour la barre de menu */
+}
+
+/* Ajustez le padding-top en fonction de la hauteur de votre barre de menu */
+.mainContent {
+  position: relative;
+  padding-top: 60px; /* Hauteur de la barre de menu pour éviter le chevauchement */
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Assurez-vous que la vidéo commence en dessous de la barre de menu */
+.backgroundVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Reste des styles pour la vidéo, le bouton mute et autres éléments */
+.muteButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.muteIcon {
+  width: 30px;
+  height: 30px;
+}
+
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 1;
+}
+
+.content {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.collectButton {
+  margin-top: 1rem;
+  padding: 0.5rem 2rem;
+  background: #0070f3;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.collectButton:hover {
+  background: #005bb5;
+}
+
+.socialIcons {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.socialIcons a {
+  display: block;
+}
+
+.socialIcons img {
+  width: 24px;
+  height: 24px;
+  transition: opacity 0.3s;
+}
+
+.socialIcons a:hover img {
+  opacity: 0.7;
+}
+
+.testimonials {
+  padding: 2rem;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.testimonials h2 {
+  margin-bottom: 1rem;
+}
+
+.testimonialList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.testimonial {
+  max-width: 600px;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.testimonial h4 {
+  margin: 0.5rem 0 0.2rem;
+  font-size: 1.2rem;
+}
+
+.testimonial span {
+  color: #666;
+}

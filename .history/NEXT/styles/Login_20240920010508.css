@@ -1,0 +1,139 @@
+/* Conteneur principal */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+
+}
+
+/* Style de la boîte de connexion */
+.login-box {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+  height: 500px; /* Ajout de la hauteur */
+  transition: all 0.3s ease;
+}
+
+/* Icône utilisateur */
+.icon-container {
+  width: 60px;
+  height: 60px;
+  background-color: #28a745;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 20px;
+}
+
+.icon {
+  color: white;
+  font-size: 2rem;
+}
+
+/* Champs de formulaire */
+.form-control {
+  height: 45px;
+  padding: 0.75rem;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+}
+
+.form-control:focus {
+  border-color: #5a9bd4; /* Bleu clair désaturé */
+  box-shadow: 0 0 0 0.2rem rgba(90, 155, 212, 0.25); /* Ombre bleu clair */
+  outline: none;
+}
+
+/* Style de l'icône dans les champs */
+.input-group-text {
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  background-color: #e9ecef;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+}
+
+/* Icônes dans les champs */
+.input-group-text svg {
+  height: 1.25rem;
+  width: 1.25rem;
+  color: #6c757d;
+}
+
+/* Style du bouton */
+.btn-success {
+  background-color: #28a745;
+  color: white;
+  padding: 0.75rem;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+}
+
+.btn-success:disabled {
+  background-color: #94d3a2;
+  cursor: not-allowed;
+}
+
+/* Messages d'erreur et de succès */
+.text-danger {
+  color: #dc3545 !important;
+}
+
+.text-success {
+  color: #28a745 !important;
+}
+
+/* Texte "Vous n'avez pas de compte?" */
+.text-center {
+  color: #000; /* Le texte est noir */
+}
+
+/* Lien "Se connecter" en bleu et souligné */
+.blue-link {
+  color: #007bff; /* Le lien "Se connecter" est en bleu */
+  text-decoration: underline; /* Le lien est souligné */
+  transition: color 0.3s ease;
+}
+
+.blue-link:hover,
+.blue-link:focus {
+  color: #0056b3; /* Lien bleu plus foncé au survol */
+  text-decoration: underline; /* Toujours souligné au survol */
+}
+
+/* Réactivité pour les petits écrans */
+@media (max-width: 768px) {
+  .login-box {
+    max-width: 90%;
+    padding: 20px;
+  }
+
+  .btn-success {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+
+  .icon-container {
+    width: 50px;
+    height: 50px;
+  }
+}

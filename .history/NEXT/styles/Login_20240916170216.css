@@ -1,0 +1,117 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f8f9fa;
+  }
+  
+  .login-box {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 100%;
+    transition: all 0.3s ease;
+  }
+  
+  .icon-container {
+    width: 60px;
+    height: 60px;
+    background-color: #28a745;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px;
+  }
+  
+  .icon {
+    color: white;
+    font-size: 1.5rem;
+  }
+  
+  .form-control {
+    height: 45px;
+    padding: 0.75rem;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  .form-control:focus {
+    border-color: #28a745;
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25); /* Ombre verte */
+    outline: none;
+  }
+  
+  .input-group-text {
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    background-color: #e9ecef;
+    border: 1px solid #ced4da;
+  }
+  
+  .input-group-text svg {
+    height: 1.25rem;
+    width: 1.25rem;
+    color: #6c757d;
+  }
+  
+  .btn-success {
+    background-color: #28a745;
+    color: white;
+    padding: 0.75rem;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .btn-success:hover {
+    background-color: #218838;
+  }
+  
+  .btn-success:disabled {
+    background-color: #94d3a2;
+    cursor: not-allowed;
+  }
+  
+  .text-danger {
+    color: #dc3545 !important;
+  }
+  
+  .text-success {
+    color: #28a745 !important;
+  }
+  
+  .text-center a {
+    color: #007bff;
+    transition: color 0.3s ease;
+  }
+  
+  .text-center a:hover {
+    color: #0056b3;
+  }
+  
+  /* Réactivité pour petits appareils */
+  @media (max-width: 768px) {
+    .login-box {
+      max-width: 90%;
+      padding: 15px;
+    }
+  
+    .btn-success {
+      font-size: 0.9rem;
+      padding: 0.6rem;
+    }
+  
+    .icon-container {
+      width: 50px;
+      height: 50px;
+    }
+  }
+  
